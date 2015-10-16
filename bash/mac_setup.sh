@@ -5,7 +5,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install wget
 
 # Install Emacs
-brew install emacs --with-cocoa --srgb
+brew install emacs --with-cocoa #--srgb
 ln -s /usr/local/Cellar/emacs/24.5/Emacs.app /Applications
 
 # Install Python and useful libraries
