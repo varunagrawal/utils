@@ -1,3 +1,7 @@
+/*************
+A solver for the Chinese Remainder Theorem (CRT)
+ ************/
+
 #include<iostream>
 #include<cstdio>
 #include<vector>
