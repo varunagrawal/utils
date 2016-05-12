@@ -27,6 +27,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Custom (aka fuckin' brilliant) command prompt. Shows git branch if in git repo. \e sets the color of the branch to 0;31 (RED). Ensure you escape correctly (http://stackoverflow.com/questions/342093/ps1-line-wrapping-with-colours-problem)
 export PS1='\h:\W \u\[\e[31m\]$(__git_ps1 "[%s]")\[\e[m\]\$ '
+# Need to try this out and customize it even more.
+# export PS1='\h:\[\e[44m\]\u\[\e[m\] \[\e[0;36m\]\[\w\]\[\e[m\]$(__git_ps1 "\[\e[31m\][%s]\[\e[0m\]")\$ '
 
 # Make the display even more awesome by color coding different types of files. For ref: http://www.mkyong.com/mac/add-color-to-the-bash-terminal-in-mac-os-x/
 export CLICOLOR=1
