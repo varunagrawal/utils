@@ -1,11 +1,18 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/varun/.oh-my-zsh
+export TERM="xterm-256color"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="lambda-mod" # honukai, spaceship, muse, gnzh, bullet-train
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+  export ZSH=/home/varun/.oh-my-zsh
+
+# Set the font before setting the theme
+POWERLEVEL9K_MODE='awesome-fontconfig'
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,14 +56,13 @@ ZSH_THEME="lambda-mod" # honukai, spaceship, muse, gnzh, bullet-train
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python ruby django rails docker colorize)
+plugins=(git python docker zsh-syntax-highlighting virtualenv ruby)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH:/Users/varun/.rvm/gems/ruby-2.2.3/bin:/Users/varun/.rvm/gems/ruby-2.2.3@global/bin:/Users/varun/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/varun/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -82,7 +88,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source /home/varun/Downloads/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-source /usr/local/opt/autoenv/activate.sh
+
+# Load pyenv automatically by adding
+# the following to ~/.zshrc:
+
+export PATH="/home/varun/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PATH="/home/varun/.linuxbrew/bin:$PATH"
+export MANPATH="/home/varun/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/varun/.linuxbrew/share/info:$INFOPATH"
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv rbenv go_version status history time)
